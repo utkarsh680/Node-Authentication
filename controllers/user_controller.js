@@ -1,9 +1,9 @@
 const User = require("../models/user");
 
-module.exports.profile = function (req, res) {
- return  res.render('home', {
-    title : 'home'
- })
+module.exports.profile = async function (req, res) {
+return res.render('home', {
+  title: 'User Profile'
+})
 };
 
 //render signUp page
@@ -41,22 +41,5 @@ module.exports.create = async function (req, res) {
 };
 
 module.exports.createSession = async function (req, res) {
-  const user = await User.findOne({ email: req.body.email });
-
-  try {
-    if(user){
-        //handle password does't match
-        if(user.password != req.body.password){
-            return res.redirect('back')
-        }
-        //handle session creation
-        res.cookie('user_id', user.id);
-        return res.redirect('/users/profile')
-
-    }else{
-        return res.redirect('back');
-    }
-  } catch (error) {
-    console.log(error);
-  }
+ 
 };
