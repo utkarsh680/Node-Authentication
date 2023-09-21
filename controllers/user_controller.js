@@ -41,5 +41,5 @@ module.exports.create = async function (req, res) {
 };
 
 module.exports.createSession = async function (req, res) {
- 
+   return res.redirect('/');
 };
