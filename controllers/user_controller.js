@@ -1,13 +1,16 @@
 const User = require("../models/user");
 
 module.exports.profile = async function (req, res) {
-return res.render('home', {
-  title: 'User Profile'
-})
+  return res.render("home", {
+    title: "User Profile",
+  });
 };
 
 //render signUp page
 module.exports.signUp = function (req, res) {
+  if (req.isAuthenticated()) {
+    return res.redirect("/users/profile");
+  }
   return res.render("sign-up", {
     title: "Auth | Sign Up",
   });
@@ -15,6 +18,9 @@ module.exports.signUp = function (req, res) {
 
 //render singIn page
 module.exports.signIn = function (req, res) {
+  if (req.isAuthenticated()) {
+    return res.redirect("/users/profile");
+  }
   return res.render("sign-in", {
     title: "Auth | Sign In",
   });
@@ -41,5 +47,5 @@ module.exports.create = async function (req, res) {
 };
 
 module.exports.createSession = async function (req, res) {
-   return res.redirect('/');
+  return res.redirect("/");
 };
