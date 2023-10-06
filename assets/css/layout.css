@@ -1,3 +1,7 @@
 body {
-  background-color: #9e3939;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

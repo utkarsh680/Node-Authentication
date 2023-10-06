@@ -11,7 +11,7 @@ module.exports.signUp = function (req, res) {
   if (req.isAuthenticated()) {
     return res.redirect("/users/profile");
   }
-  return res.render("sign-up", {
+  return res.render("user_sign_up", {
     title: "Auth | Sign Up",
   });
 };
@@ -21,7 +21,7 @@ module.exports.signIn = function (req, res) {
   if (req.isAuthenticated()) {
     return res.redirect("/users/profile");
   }
-  return res.render("sign-in", {
+  return res.render("user_sign_in", {
     title: "Auth | Sign In",
   });
 };
