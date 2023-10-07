@@ -36,7 +36,6 @@ input :-webkit-autofill {
   align-items: center;
   height: 60vh;
   width: 80vw;
-  border: 2px solid white;
 }
 
 .sign-in-placement .sign-in-form {

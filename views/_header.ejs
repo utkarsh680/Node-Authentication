@@ -1,1 +1,14 @@
-<h1 class="header">authe</h1>
+<ul>
+    <% if (locals.user){ %>
+        <li><%= user.name %></li>
+        <li id = 'sign-out-button'>
+            <a href="/users/sign-out">Sign Out</a>
+        </li>
+    <% } else { %> 
+        <li id="login-button">
+            <a href="/users/sign-in">Login</a>
+        </li>
+    <% } %>
+</ul>
+
+<script src="/js/header.js"></script>

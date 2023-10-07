@@ -21,7 +21,6 @@ input {
   align-items: center;
   height: 60vh;
   width: 80vw;
-
   .sign-up-box {
     display: flex;
     justify-content: space-around;
@@ -78,8 +77,8 @@ input {
     input {
       position: relative;
       display: flex;
-      padding: 15px 55px;
-      width: 30vw;
+      padding: 15px 0px 15px 55px;
+      width: 100%;
       border: none;
       color: white;
       background-color: #212121;
@@ -93,6 +92,7 @@ input {
     display: flex;
     position: relative;
     justify-content: center;
+    align-items: center;
     img {
       position: absolute;
       width: 25px;
@@ -103,8 +103,8 @@ input {
     input {
       position: relative;
       display: flex;
-      padding: 15px 55px;
-      width: 30vw;
+      padding: 15px 0px 15px 55px;
+      width: 100%;
       border: none;
       color: white;
       background-color: #212121;
@@ -115,11 +115,9 @@ input {
     i {
       position: absolute;
       cursor: pointer;
-      //  color: rgb(207, 190, 170);;
       color: white;
+      right: 20px;
       font-size: 20px;
-      margin-left: 27.5%;
-      margin-top: -33px;
     }
   }
 
@@ -127,6 +125,7 @@ input {
     display: flex;
     position: relative;
     justify-content: center;
+    align-items: center;
     img {
       position: absolute;
       width: 25px;
@@ -137,8 +136,9 @@ input {
     input {
       position: relative;
       display: flex;
-      padding: 15px 55px;
-      width: 30vw;
+      justify-content: flex-start;
+      padding: 15px 0px 15px 55px;
+      width: 100%;
       border: none;
       color: white;
       background-color: #212121;
@@ -149,11 +149,9 @@ input {
     i {
       position: absolute;
       cursor: pointer;
-      //  color: rgb(207, 190, 170);;
       color: white;
+      right: 20px;
       font-size: 20px;
-      margin-left: 27.5%;
-      margin-top: -33px;
     }
   }
 
@@ -177,7 +175,30 @@ input {
 .right {
   height: inherit;
   width: 45%;
-  margin-top: 67px;
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .checkout {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height: 150px;
+    width: 400px;
+    align-items: center;
+    margin-top: 25px;
+    .text1 {
+      font-size: 25px;
+      margin-bottom: -3px;
+      font-weight: 600;
+    }
+    .text2 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
 }
 
 #gfg-icon {
@@ -199,7 +220,9 @@ input {
     p {
       height: 20px;
       width: 25vw;
+      font-size: 20px;
       text-align: center;
+      font-family: sans-serif;
       color: white;
     }
 
@@ -230,6 +253,9 @@ input {
       width: 26vw;
       text-align: center;
       color: white;
+      font-size: 20px;
+      text-align: center;
+      font-family: sans-serif;
     }
   }
   #email {
@@ -252,6 +278,8 @@ input {
       height: 20px;
       width: 25vw;
       text-align: center;
+      font-size: 20px;
+      font-family: sans-serif;
       color: white;
     }
   }

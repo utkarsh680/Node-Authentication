@@ -1,7 +1,7 @@
 const User = require("../models/user");
 
 module.exports.profile = async function (req, res) {
-  return res.render("home", {
+  return res.render("user_profile", {
     title: "User Profile",
   });
 };
@@ -47,7 +47,7 @@ module.exports.create = async function (req, res) {
 };
 
 module.exports.createSession = async function (req, res) {
-  return res.redirect("/");
+  return res.redirect("/users/profile");
 };
 
 //destroy session

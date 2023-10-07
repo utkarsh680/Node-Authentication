@@ -1,0 +1,26 @@
+.success-box {
+  margin-top: 200px;
+}
+
+.success-box .box {
+  height: 250px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #161616;
+  border-radius: 15px;
+  background-color: #191919;
+}
+
+.success-box .box .success-auth {
+  color: green;
+}
+
+.success-box .box .user-name {
+  color: white;
+  list-style: none;
+  font-size: 15px;
+  font-family: sans-serif;
+}
