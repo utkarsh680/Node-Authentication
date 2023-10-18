@@ -1,19 +1,15 @@
-.header {
-  font-size: 40px;
-  color: red;
-  position: absolute;
-  left: 30px;
-  top: 30px;
+ul {
+  list-style: none;
 }
 
-#login-button {
+ul #login-button {
   position: absolute;
   right: 50px;
   top: 40px;
   font-family: sans-serif;
 }
 
-#login-button a {
+ul #login-button a {
   height: 38px;
   width: 100px;
   display: flex;
@@ -28,19 +24,19 @@
   border: 1px solid black;
 }
 
-#login-button a:hover {
+ul #login-button a:hover {
   background-color: #0158c2;
   border: 1px solid white;
 }
 
-#sign-out-button {
+ul #sign-out-button {
   position: absolute;
   right: 50px;
   top: 40px;
   font-family: sans-serif;
 }
 
-#sign-out-button a {
+ul #sign-out-button a {
   height: 38px;
   width: 120px;
   display: flex;
@@ -55,7 +51,7 @@
   border: 1px solid black;
 }
 
-#sign-out-button a:hover {
+ul #sign-out-button a:hover {
   background-color: #0158c2;
   border: 1px solid white;
 }
