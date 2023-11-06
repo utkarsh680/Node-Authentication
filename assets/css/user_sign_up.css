@@ -253,25 +253,27 @@ input :-webkit-autofill {
   margin-left: 15px;
 }
 
-#gfg-icon #facebook {
+#gfg-icon #github {
   height: 40px;
   width: 30vw;
-  background-color: #1277f3;
-  border: 1px solid blue;
+  background-color: #196d31;
+  border: green;
   border-radius: 15px;
   margin-top: 10px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-#gfg-icon #facebook i {
+#gfg-icon #github i {
   font-size: 25px;
   color: white;
   margin-left: 15px;
 }
 
-#gfg-icon #facebook p {
+#gfg-icon #github p {
   height: 20px;
   width: 26vw;
   text-align: center;
@@ -291,6 +293,7 @@ input :-webkit-autofill {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  text-decoration: none;
 }
 
 #gfg-icon #email i {
@@ -325,4 +328,14 @@ input :-webkit-autofill {
   font-weight: 700;
   font-family: sans-serif;
   text-decoration: none;
+  color: #0b4995;
+  transition: all 0.3s ease;
+}
+
+.Already-account span a:hover {
+  color: #1277f3;
+}
+
+.Already-account span a:active {
+  color: green;
 }

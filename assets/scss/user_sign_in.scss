@@ -199,5 +199,13 @@ input {
     font-weight: 700;
     font-family: sans-serif;
     text-decoration: none;
+    color: #0b4995;
+    transition: all 0.3s ease;
+  }
+  span a:hover {
+    color: #1277f3;
+  }
+  span a:active{
+    color: green;
   }
 }

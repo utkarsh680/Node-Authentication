@@ -47,9 +47,10 @@
               name="password"
               placeholder="Password"
               required
-              id="id_passwordSignup"
+              id="password"
+              class="password-input"
             />
-            <i class="far fa-eye" id="togglePasswordSignup"></i>
+            <i class="far fa-eye"id="show-password"></i>
             <img
               src="https://cdn-icons-png.flaticon.com/512/8882/8882850.png"
               alt="email"
@@ -61,9 +62,10 @@
               name="confirm_password"
               placeholder="Confirm Password"
               required
-              id="confirm_password"
+              id="confirm-password"
+              class="password-input"
             />
-            <i class="far fa-eye" id="toggleConfirmPass"></i>
+            <i class="far fa-eye" id="show-confirm-password"></i>
             <img
               src="https://cdn-icons-png.flaticon.com/512/8882/8882850.png"
               alt="email"
@@ -78,17 +80,13 @@
 
     <div class="right">
       <div class="checkout">
-        <p class="text1">
-          You are Signed Out
-        </p>
-        <p class="text2">
-          Sign in to get the best experience
-        </p>
+        <p class="text1">You are Signed Out</p>
+        <p class="text2">Sign in to get the best experience</p>
       </div>
 
       <div id="gfg-icon">
         <div>
-          <a id="email"
+          <a id="email" href="/users/sign-in"
             ><i class="fa-solid fa-envelope"></i>
             <p>Continue with email</p>
           </a>
@@ -104,16 +102,16 @@
         </div>
 
         <div>
-          <a id="facebook"
-            ><i class="fa-brands fa-facebook-f"></i>
-            <p>Continue with Facebook</p>
+          <a id="github" href="/users/auth/github"
+            ><i class="fa-brands fa-github"></i>
+            <p>Continue with github</p>
           </a>
         </div>
       </div>
       <div class="Already-account">
         Already have an account?
         <span>
-          <a style="color: blue" href="/users/sign-in"
+          <a href="/users/sign-in"
             >&nbsp; Sign in<i class="fa-solid fa-arrow-right"></i
           ></a>
         </span>
@@ -129,3 +127,4 @@
     </div>
   </div>
 </div>
+<script src="/js/password-cp-eye.js"></script>
