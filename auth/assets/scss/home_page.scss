@@ -1,0 +1,14 @@
+.success-box {
+  height: 70vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .user-name {
+    color: white;
+  }
+  .success {
+    color: green;
+  }
+}

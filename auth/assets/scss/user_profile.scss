@@ -1,0 +1,36 @@
+.success-box {
+  margin-top: 200px;
+  
+
+  .box {
+    height: 250px;
+    width: 450px;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(22, 22, 22);
+    border-radius: 15px;
+    background-color: rgb(25, 25, 25);
+
+    .success-auth {
+      color: green;
+    }
+    .user-name {
+      color: white;
+      list-style: none;
+      font-size: 15px;
+      font-family: sans-serif;
+    }
+    .reset-password {
+      color: white;
+      font-size: 15px;
+      font-family: sans-serif;
+      cursor: pointer;
+    }
+  }
+}
+.custom-class{
+  background-color: #116ddf;
+}

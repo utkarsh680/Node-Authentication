@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="/css/user_profile.css" />
+<div class="success-box">
+  <div class="box">
+    <h1 class="success-auth">success authentication</h1>
+    <li class="user-name"><%= user.name %></li>
+    <div class="reset-password" id="showYesNo">reset password?</div>
+  </div>
+</div>
+<form action="/users/resetPassword" id="reset-pass-form" method="post">
+  <input type="hidden" name="email" value="<%= user.email %>">
+</form>
+<script src="/js/yes-no-izitoast.js"></script>

@@ -1,0 +1,14 @@
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+body h5 {
+  color: white;
+  font-size: 20px;
+  font-family: sans-serif;
+}

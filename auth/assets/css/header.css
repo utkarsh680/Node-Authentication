@@ -1,0 +1,57 @@
+ul {
+  list-style: none;
+}
+
+ul #login-button {
+  position: absolute;
+  right: 50px;
+  top: 40px;
+  font-family: sans-serif;
+}
+
+ul #login-button a {
+  height: 38px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  background-color: #116ddf;
+  font-size: 18px;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  border: 1px solid black;
+}
+
+ul #login-button a:hover {
+  background-color: #0158c2;
+  border: 1px solid white;
+}
+
+ul #sign-out-button {
+  position: absolute;
+  right: 50px;
+  top: 40px;
+  font-family: sans-serif;
+}
+
+ul #sign-out-button a {
+  height: 38px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  background-color: #116ddf;
+  font-size: 18px;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  border: 1px solid black;
+}
+
+ul #sign-out-button a:hover {
+  background-color: #0158c2;
+  border: 1px solid white;
+}

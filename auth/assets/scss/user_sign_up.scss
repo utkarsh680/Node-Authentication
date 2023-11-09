@@ -1,0 +1,314 @@
+input {
+  caret-color: red;
+
+  :-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  }
+}
+.sign-up {
+  margin-left: 30px;
+  .sign-up-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.sign-up-placement {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 80vw;
+  .sign-up-box {
+    display: flex;
+    justify-content: space-around;
+    height: 400px;
+    width: 100%;
+  }
+  .left {
+    position: relative;
+    width: 45%;
+  }
+}
+#grid-margin {
+  display: grid;
+  grid-gap: 10px;
+  input::placeholder {
+    // color: rgb(207, 190, 170);
+    color: grey;
+  }
+  #text-input {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    img {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      left: 18px;
+      top: 10px;
+    }
+    input {
+      display: flex;
+      padding: 15px 0px 15px 55px;
+      width: 100%;
+      border: none;
+      color: white;
+      background-color: #212121;
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: sans-serif;
+    }
+  }
+
+  #email-input {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    img {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      left: 18px;
+      top: 10px;
+    }
+    input {
+      position: relative;
+      display: flex;
+      padding: 15px 0px 15px 55px;
+      width: 100%;
+      border: none;
+      color: white;
+      background-color: #212121;
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: sans-serif;
+    }
+  }
+
+  #password-input {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    img {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      left: 18px;
+      top: 10px;
+    }
+    input {
+      position: relative;
+      display: flex;
+      padding: 15px 0px 15px 55px;
+      width: 100%;
+      border: none;
+      color: white;
+      background-color: #212121;
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: sans-serif;
+    }
+    i {
+      position: absolute;
+      cursor: pointer;
+      color: white;
+      right: 20px;
+      font-size: 20px;
+    }
+  }
+
+  #confirm-password-input {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    img {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      left: 18px;
+      top: 10px;
+    }
+    input {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      padding: 15px 0px 15px 55px;
+      width: 100%;
+      border: none;
+      color: white;
+      background-color: #212121;
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: sans-serif;
+    }
+    i {
+      position: absolute;
+      cursor: pointer;
+      color: white;
+      right: 20px;
+      font-size: 20px;
+    }
+  }
+
+  #submit-input button {
+    padding: 15px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(130deg, #1277f3 0%, #0b4995 97%);
+    color: white;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 550;
+    font-family: sans-serif;
+    cursor: pointer;
+  }
+}
+
+.right {
+  height: inherit;
+  width: 45%;
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .checkout {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height: 150px;
+    width: 400px;
+    align-items: center;
+    margin-top: 25px;
+    .text1 {
+      font-size: 25px;
+      margin-bottom: -3px;
+      font-weight: 600;
+    }
+    .text2 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+}
+
+#gfg-icon {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
+
+  #google {
+    height: 40px;
+    width: 30vw;
+    background-color: #212121;
+    border: 1px solid #212121;
+    border-radius: 15px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    p {
+      height: 20px;
+      width: 25vw;
+      font-size: 20px;
+      text-align: center;
+      font-family: sans-serif;
+      color: white;
+    }
+
+    img {
+      height: 25px;
+      width: 25px;
+      margin-left: 15px;
+    }
+  }
+  #github {
+    height: 40px;
+    width: 30vw;
+    background-color: #196d31;
+    border: green;
+    border-radius: 15px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    i {
+      font-size: 25px;
+      color: white;
+      margin-left: 15px;
+    }
+    p {
+      height: 20px;
+      width: 26vw;
+      text-align: center;
+      color: white;
+      font-size: 20px;
+      text-align: center;
+      font-family: sans-serif;
+    }
+  }
+  #email {
+    height: 40px;
+    width: 30vw;
+    background-color: red;
+    border: 1px solid darkred;
+    border-radius: 15px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+
+    i {
+      font-size: 25px;
+      color: white;
+      margin-left: 15px;
+    }
+    p {
+      height: 20px;
+      width: 25vw;
+      text-align: center;
+      font-size: 20px;
+      font-family: sans-serif;
+      color: white;
+    }
+  }
+}
+
+#create-account {
+  display: flex;
+  justify-content: center;
+  color: gray;
+}
+.Already-account {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  // color: rgb(207, 190, 170);;
+  color: white;
+  span a {
+    font-weight: 700;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #0b4995;
+    transition: all 0.3s ease;
+  }
+  span a:hover {
+    color: #1277f3;
+  }
+  span a:active{
+    color: green;
+  }
+}

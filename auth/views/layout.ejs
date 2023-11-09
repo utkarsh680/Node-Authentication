@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+
+    <%- style%>
+  </head>
+  <body>
+    <%- include('_header'); -%> 
+    <%- body %> 
+    <%- include('_footer'); -%> 
+    <%- script %>
+      <!-- Define your custom styles -->
+      <style>
+        /* Custom styles for the notification */
+        .custom-notification-class {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+  <script>
+    <% if (flash.success && flash.success.length > 0) { %>
+      new Noty({
+        theme: 'relax',
+        text: '<%= flash.success %>',
+        type: 'success',
+        layout: 'topLeft',
+        timeout: 1500,
+        className: 'custom-notification-class' // Add your custom class here
+      }).show();
+    <% } %>
+  
+    <% if (flash.error && flash.error.length > 0) { %>
+      new Noty({
+        theme: 'relax',
+        text: '<%= flash.error %>',
+        type: 'error',
+        layout: 'topLeft',
+        timeout: 1500,
+        className: 'custom-error-class' // Add your custom class here
+      }).show();
+    <% } %>
+  </script>
+  </body>
+</html>
