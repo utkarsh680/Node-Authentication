@@ -19,6 +19,7 @@
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.3",
     "izitoast": "^1.4.0",
+    "jsonwebtoken": "^9.0.2",
     "layouts": "^3.0.2",
     "mongoose": "^7.5.2",
     "node-sass-middleware": "^1.1.0",
