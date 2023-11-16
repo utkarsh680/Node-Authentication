@@ -9,8 +9,22 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
 
@@ -21,43 +35,41 @@
     <%- style%>
   </head>
   <body>
-    <%- include('_header'); -%> 
-    <%- body %> 
-    <%- include('_footer'); -%> 
-    <%- script %>
-      <!-- Define your custom styles -->
-      <style>
-        /* Custom styles for the notification */
-        .custom-notification-class {
-            background-color: #3498db;
-            color: #ffffff;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
+    <%- include('_header'); -%> <%- body %> <%- include('_footer'); -%> <%-
+    script %>
+    <!-- Define your custom styles -->
+    <style>
+      /* Custom styles for the notification */
+      .custom-notification-class {
+        background-color: #3498db;
+        color: #ffffff;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
     </style>
-  <script>
-    <% if (flash.success && flash.success.length > 0) { %>
-      new Noty({
-        theme: 'relax',
-        text: '<%= flash.success %>',
-        type: 'success',
-        layout: 'topLeft',
-        timeout: 1500,
-        className: 'custom-notification-class' // Add your custom class here
-      }).show();
-    <% } %>
-  
-    <% if (flash.error && flash.error.length > 0) { %>
-      new Noty({
-        theme: 'relax',
-        text: '<%= flash.error %>',
-        type: 'error',
-        layout: 'topLeft',
-        timeout: 1500,
-        className: 'custom-error-class' // Add your custom class here
-      }).show();
-    <% } %>
-  </script>
+    <script>
+      <% if (flash.success && flash.success.length > 0) { %>
+        new Noty({
+          theme: 'relax',
+          text: '<%= flash.success %>',
+          type: 'success',
+          layout: 'topLeft',
+          timeout: 1500,
+          className: 'custom-notification-class' // Add your custom class here
+        }).show();
+      <% } %>
+
+      <% if (flash.error && flash.error.length > 0) { %>
+        new Noty({
+          theme: 'relax',
+          text: '<%= flash.error %>',
+          type: 'error',
+          layout: 'topLeft',
+          timeout: 1500,
+          className: 'custom-error-class' // Add your custom class here
+        }).show();
+      <% } %>
+    </script>
   </body>
 </html>

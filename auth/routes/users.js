@@ -32,6 +32,13 @@ router.get('/auth/github/callback', passport.authenticate(
 
 //reset passowr
 router.post('/resetPassword', usersControllers.passwordReset);
+router.get('/reset-password/:token', usersControllers.passwordResetLink);
+
+router.get('/update-password/:token', usersControllers.updatePassword);
+
+
+//forgot password 
+router.get('/forgotPassword', usersControllers.forgetPassword);
 
 
 module.exports = router;

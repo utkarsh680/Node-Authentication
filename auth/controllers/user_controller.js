@@ -1,18 +1,32 @@
 const { resetPasswordMail } = require("../mailers/resetPassword_mailer");
 const User = require("../models/user");
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
-const crypto = require('crypto');
+const crypto = require("crypto");
+const passport = require("passport");
 
 // Function to generate a random secret key
-const generateRandomSecretKey = () => {
-  return crypto.randomBytes(32).toString('hex'); // 32 bytes converts to a 64-character hex string
-};
+// const generateRandomSecretKey = () => {
+//   return crypto.randomBytes(32).toString('hex'); // 32 bytes converts to a 64-character hex string
+// };
 
 // Generate a random secret key
-const secretKey = generateRandomSecretKey();
+const secretKey = "hellosirhowareyou";
 
+// Function to decode JWT token
+const decodeResetToken = (token) => {
+  try {
+    // Verify the token
+    const decoded = jwt.verify(token, secretKey);
 
+    // 'decoded' will contain the payload information
+    return decoded;
+  } catch (err) {
+    // If the token is invalid or has expired, an error will be thrown
+    console.error(err);
+    return null;
+  }
+};
 
 module.exports.profile = async function (req, res) {
   return res.render("user_profile", {
@@ -81,7 +95,6 @@ module.exports.destroySession = function (req, res) {
   });
 };
 
-
 //for password reset
 exports.passwordReset = (req, res, next) => {
   try {
@@ -90,12 +103,13 @@ exports.passwordReset = (req, res, next) => {
 
     // Generate JWT token
     const resetToken = generateResetToken(email);
+    const resetLink = `http://localhost:8000/users/reset-password/${resetToken}`;
 
     // Send the resetToken to the user (e.g., via email)
     resetPasswordMail(
       email,
       "Password Reset",
-      `Use the following link to reset your password: ${resetToken}`
+      `Use the following link to reset your password: ${resetLink}`
     );
   } catch (err) {
     console.log(err);
@@ -108,6 +122,58 @@ exports.passwordReset = (req, res, next) => {
 const generateResetToken = (email) => {
   const payload = { email };
   const options = { expiresIn: "1h" }; // Set an expiration time for the token
-
   return jwt.sign(payload, secretKey, options);
+};
+
+// password reset link
+exports.passwordResetLink = (req, res) => {
+  const resetToken = req.params.token;
+  // Decode the token for demonstration purposes
+  const decodedToken = decodeResetToken(resetToken);
+  console.log(decodedToken); // This will log the decoded token payload
+  return res.render("reset-password", {
+    title: "Password Reset",
+    token: resetToken,
+    email: decodedToken.email,
+  });
+};
+exports.updatePassword = async (req, res) => {
+  const resetToken = req.params.token;
+
+  // Decode the token for demonstration purposes
+  const decodedToken = decodeResetToken(resetToken);
+  console.log(decodedToken);
+
+  if (!decodedToken) {
+    req.flash("error", "invalid link!");
+    return res.redirect("back");
+  }
+  if (req.body.password != req.body.confirm_password) {
+    req.flash("error", "Please Match the Password!");
+    return res.redirect("back");
+  }
+
+  try {
+    const user = await User.findOne({ email: decodedToken.email });
+    if (!user) {
+      req.flash("error", "invalid link!");
+      return res.redirect("back");
+    }
+    req.flash("success", "password reset successfully");
+    user.password = req.body.password;
+    user.save();
+
+    req.flash("success", "password reset successfully");
+    return res.redirect("/users/sign-in");
+  } catch (error) {
+    console.log("error", error);
+    req.flash("error", "Error updating password. Please try again.");
+    return res.redirect("back");
+  }
+};
+
+exports.forgetPassword = (req, res) => {
+  return res.render("forgot-password", {
+    title: "Forgot password",
+  });
 };

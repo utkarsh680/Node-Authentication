@@ -110,8 +110,7 @@ input {
       top: 14px;
     }
   }
-  .forgetPassword {
-    color: white;
+  .forgotPassword {
     font-size: 16px;
     cursor: pointer;
     margin-top: 8px;
@@ -119,9 +118,17 @@ input {
     align-self: flex-end;
     font-weight: 500;
   }
-  .forgetPassword:hover{
+  a{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+  }
+  a:hover{
     transition: all 0.3s ease;
     color: #388df5;
+  }
+  a:active{
+    color: green;
   }
 
   .submit-button button {

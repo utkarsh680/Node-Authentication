@@ -116,8 +116,7 @@ input :-webkit-autofill {
   top: 14px;
 }
 
-.grid-margin .forgetPassword {
-  color: white;
+.grid-margin .forgotPassword {
   font-size: 16px;
   cursor: pointer;
   margin-top: 8px;
@@ -126,9 +125,19 @@ input :-webkit-autofill {
   font-weight: 500;
 }
 
-.grid-margin .forgetPassword:hover {
+.grid-margin a {
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+
+.grid-margin a:hover {
   transition: all 0.3s ease;
   color: #388df5;
+}
+
+.grid-margin a:active {
+  color: green;
 }
 
 .grid-margin .submit-button button {
