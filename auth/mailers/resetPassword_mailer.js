@@ -1,7 +1,7 @@
 const nodemailer = require("../config/nodemailer");
 
 //this is another way of exporting method
-exports.resetPasswordMail = async(email, subject, text) => {
+exports.resetPasswordMail = async(email, subject, text, token) => {
   console.log("inside resetPassword mailer");
 
   try{

@@ -29,8 +29,10 @@ const decodeResetToken = (token) => {
 };
 
 module.exports.profile = async function (req, res) {
+  console.log(req.user);
   return res.render("user_profile", {
     title: "User Profile",
+    user: req.user,
   });
 };
 
@@ -99,10 +101,10 @@ module.exports.destroySession = function (req, res) {
 exports.passwordReset = (req, res, next) => {
   try {
     const email = req.body.email;
-    console.log(email);
+    const userId = req.body.userId;
 
     // Generate JWT token
-    const resetToken = generateResetToken(email);
+    const resetToken = generateResetToken(userId);
     const resetLink = `http://localhost:8000/users/reset-password/${resetToken}`;
 
     // Send the resetToken to the user (e.g., via email)
@@ -111,6 +113,7 @@ exports.passwordReset = (req, res, next) => {
       "Password Reset",
       `Use the following link to reset your password: ${resetLink}`
     );
+    req.flash("success", "Password reset link sent to you Email");
   } catch (err) {
     console.log(err);
   }
@@ -119,8 +122,8 @@ exports.passwordReset = (req, res, next) => {
 };
 
 // Function to generate JWT token
-const generateResetToken = (email) => {
-  const payload = { email };
+const generateResetToken = (userId) => {
+  const payload = { userId };
   const options = { expiresIn: "1h" }; // Set an expiration time for the token
   return jwt.sign(payload, secretKey, options);
 };
@@ -131,6 +134,7 @@ exports.passwordResetLink = (req, res) => {
   // Decode the token for demonstration purposes
   const decodedToken = decodeResetToken(resetToken);
   console.log(decodedToken); // This will log the decoded token payload
+
   return res.render("reset-password", {
     title: "Password Reset",
     token: resetToken,
@@ -148,32 +152,76 @@ exports.updatePassword = async (req, res) => {
     req.flash("error", "invalid link!");
     return res.redirect("back");
   }
-  if (req.body.password != req.body.confirm_password) {
+  if (req.body.password !== req.body.confirm_password) {
     req.flash("error", "Please Match the Password!");
     return res.redirect("back");
   }
 
   try {
-    const user = await User.findOne({ email: decodedToken.email });
-    if (!user) {
-      req.flash("error", "invalid link!");
+    const updatedUser = await User.findByIdAndUpdate(
+      decodedToken.userId,
+      { password: req.body.password },
+      { new: true }
+    );
+
+    if (!updatedUser) {
+      req.flash("error", "Error updating password. User not found.");
       return res.redirect("back");
     }
-    req.flash("success", "password reset successfully");
-    user.password = req.body.password;
-    user.save();
+    // Check if the resetToken property exists before attempting to update it
+    if (updatedUser.resetToken) {
+      // Expire the reset token immediately
+      updatedUser.resetToken.expires = new Date();
+      await updatedUser.save();
+      req.flash("success", "Password reset successfully");
+    }
 
-    req.flash("success", "password reset successfully");
+    
     return res.redirect("/users/sign-in");
   } catch (error) {
     console.log("error", error);
     req.flash("error", "Error updating password. Please try again.");
     return res.redirect("back");
-  }
+  } 
 };
 
-exports.forgetPassword = (req, res) => {
+exports.forgetPasswordRender = (req, res) => {
+  const user = User.findOne({ email: req.body.email });
   return res.render("forgot-password", {
     title: "Forgot password",
+    user,
   });
+};
+
+exports.forgetPassword = async (req, res, next) => {
+  try {
+    const email = req.body.email.toLowerCase();
+    // Check if the email exists in the database
+    const user = await User.findOne({ email });
+    console.log("user", user);
+
+    if (!user) {
+      req.flash("error", "Email not found!");
+      return res.redirect("back");
+    }
+    // Generate JWT token
+    const resetToken = generateResetToken(email);
+
+    const resetLink = `http://localhost:8000/users/reset-password/${resetToken}`;
+
+    // Send the resetToken to the user (e.g., via email)
+
+    resetPasswordMail(
+      email,
+      "Password Reset",
+      `Use the following link to reset your password: ${resetLink}`
+    );
+    // Redirect the user or send a success response
+    // return res.status(200).send("Password reset email sent. Check your inbox.");
+    return res.redirect("back");
+  } catch (error) {
+    console.log(error);
+    // Handle errors appropriately
+    return res.status(500).send("Internal Server Error");
+  }
 };

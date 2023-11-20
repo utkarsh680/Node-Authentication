@@ -8,5 +8,6 @@
 </div>
 <form action="/users/resetPassword" id="reset-pass-form" method="post">
   <input type="hidden" name="email" value="<%= user.email %>">
+  <input type="hidden" name="userId" value="<%= user._id %>" />
 </form>
 <script src="/js/yes-no-izitoast.js"></script>
