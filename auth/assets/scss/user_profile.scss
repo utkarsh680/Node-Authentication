@@ -1,36 +1,76 @@
 .success-box {
-  margin-top: 200px;
-  
-
+  height: calc(100vh - 170px);
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .box {
-    height: 250px;
-    width: 450px;
+    height: 280px;
+    width: 500px;
     display: flex;
-    gap: 1rem;
+    gap: 0.7rem;
     flex-direction: column;
-    justify-content: center;
+    position: relative;
     align-items: center;
     border: 2px solid rgb(22, 22, 22);
     border-radius: 15px;
     background-color: rgb(25, 25, 25);
-
+    .success-sign{
+      height: 70px;
+      width: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: green;
+      border-radius: 50%;
+      position: absolute;
+      top: -36px;
+      i{
+        color: white;
+        font-size: 30px;
+      }
+    }
     .success-auth {
       color: green;
+      margin-top: 40px;
     }
     .user-name {
+      margin-top: 5px;
       color: white;
       list-style: none;
-      font-size: 15px;
+      font-size: 17px;
+      font-family: sans-serif;
+    }
+    .user-email {
+      color: white;
+      list-style: none;
+      font-size: 20px;
       font-family: sans-serif;
     }
     .reset-password {
-      color: white;
-      font-size: 15px;
       font-family: sans-serif;
       cursor: pointer;
+      transition: all 0.4s ease;
+      height: 38px;
+      width: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      background-color: #116ddf;
+      font-size: 18px;
+      border-radius: 10px;
+      margin-top: 15px;
+      transition: all 0.5s ease;
+      border: 1px solid black;
+    }
+    .reset-password:hover {
+      background-color: #0158c2;
+      border: 1px solid red;
     }
   }
 }
-.custom-class{
+.custom-class {
   background-color: #116ddf;
 }

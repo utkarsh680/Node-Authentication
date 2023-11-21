@@ -1,8 +1,12 @@
 <link rel="stylesheet" href="/css/user_profile.css" />
 <div class="success-box">
   <div class="box">
-    <h1 class="success-auth">success authentication</h1>
+    <div class="success-sign">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    <h1 class="success-auth">Successfully Signed in!</h1>
     <li class="user-name"><%= user.name %></li>
+    <li class="user-email"><%= user.email %></li>
     <div class="reset-password" id="showYesNo">reset password?</div>
   </div>
 </div>

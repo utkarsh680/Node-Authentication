@@ -216,12 +216,8 @@ exports.forgetPassword = async (req, res, next) => {
       "Password Reset",
       `Use the following link to reset your password: ${resetLink}`
     );
-    // Redirect the user or send a success response
-    // return res.status(200).send("Password reset email sent. Check your inbox.");
     return res.redirect("back");
   } catch (error) {
     console.log(error);
-    // Handle errors appropriately
-    return res.status(500).send("Internal Server Error");
   }
 };
