@@ -10,6 +10,8 @@
   "author": "Utkarsh Singh",
   "license": "ISC",
   "dependencies": {
+    "animate.css": "^4.1.1",
+    "canvas-confetti": "^1.9.1",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^5.0.0",
     "cookie-parser": "^1.4.6",

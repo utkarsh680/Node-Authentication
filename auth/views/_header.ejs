@@ -1,13 +1,37 @@
 <ul>
-    <% if (locals.user){ %>
-        <li id = 'sign-out-button'>
-            <a href="/users/sign-out">Sign Out</a>
-        </li>
-    <% } else { %> 
-        <li id="login-button">
-            <a href="/users/sign-in">Login</a>
-        </li>
-    <% } %>
+  <% if (locals.user){ %>
+  <li id="sign-out-button">
+    <a href="/users/sign-out">Sign Out</a>
+  </li>
+  <% } else { %>
+  <li id="login-button">
+    <a href="/users/sign-in">Login</a>
+  </li>
+  <% } %>
 </ul>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var currentUrl = window.location.href;
 
-<script src="/js/header.js"></script>
+    if (currentUrl === "http://localhost:8000/users/sign-in") {
+      var loginButton = document.getElementById("login-button");
+      if (loginButton) {
+        loginButton.innerHTML = '<a href="/">Home</a>';
+      }
+    }
+
+    if (currentUrl === "http://localhost:8000/users/forgotPasswordRender") {
+      var backButton = document.getElementById("sign-out-button");
+      if (backButton) {
+        backButton.innerHTML = '<a href="/users/sign-in">Back</a>';
+      }
+    }
+
+    if (currentUrl.includes("http://localhost:8000/users/reset-password/")) {
+      var backButton = document.getElementById("sign-out-button");
+      if (backButton) {
+        backButton.innerHTML = '<a href="/users/profile">Back</a>';
+      }
+    }
+  });
+</script>

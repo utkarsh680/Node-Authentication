@@ -1,5 +1,4 @@
 document.getElementById("showYesNo").addEventListener("click", function () {
-    console.log('hello')
     iziToast.show({
         class: 'custom-class',
         layout: 2, // Set the layout type to '2' for Yes/No options.
@@ -15,7 +14,11 @@ document.getElementById("showYesNo").addEventListener("click", function () {
             ["<button>Yes</button>", function (instance, toast) {
                 // Handle "Yes" button click here
                 const form = document.getElementById("reset-pass-form");
-                form.submit()
+                setTimeout(function () {
+                    form.submit();    
+                }, 1000);
+                confetti();
+                
                 instance.hide({
                     transitionOut: 'fadeOut',
                 }, toast);
