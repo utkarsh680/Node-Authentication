@@ -11,7 +11,6 @@ body {
 }
 
 .sign-in-placement {
-  margin-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -255,6 +254,9 @@ body {
 }
 
 @media screen and (max-width: 660px) {
+  .sign-in-placement {
+    margin-top: 10px;
+  }
   .sign-in-placement .sign-in-form {
     width: 70%;
   }

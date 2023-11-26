@@ -12,7 +12,7 @@ link {
 }
 
 .sign-up-placement {
-  margin-top: 100px;
+  margin-top: -50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -394,9 +394,6 @@ link {
 }
 
 @media screen and (max-width: 1100px) {
-  .sign-up-placement {
-    margin-top: 30px;
-  }
   .sign-up-placement .sign-up-box .left {
     position: relative;
     width: 60%;
@@ -477,14 +474,14 @@ link {
 
 @media screen and (max-width: 660px) {
   .sign-up-placement {
-    margin-top: 30px;
+    margin-top: -145px;
   }
   .sign-up-placement .sign-up-box .left {
     position: relative;
     width: 100%;
   }
   .sign-up-placement .sign-up-box .left .sign-up-text {
-    width: 20rem;
+    width: 18rem;
     margin-left: 20px;
   }
   .sign-up-placement .sign-up-box .left .sign-up-text h1 {
