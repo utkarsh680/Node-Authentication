@@ -1,38 +1,33 @@
 .success-box {
-  height: 70vh;
+  height: 100vh;
   width: 100vw;
-
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content:start;
+  align-items: start;
   .script{
-    height: 20vw;
-    width: 30vw;
-    margin-left: 20px;
-    margin-left: 500px;
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-  .user-name {
-    color: white;
+    height: 20vh;
+    width: 100vw;
     
-  }
-  .success {
-    color: rgb(255, 255, 255);
-    font-size:4vw;
-    background-image: linear-gradient(80deg,rgb(252,186,6), rgb(54,46,148) ,rgb(233,237,247));
-    -webkit-background-clip: text;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: transparent;
-  }
+    .success {
+      color: rgb(255, 255, 255);
+      font-size:80px;
+      padding: 55px;
+      margin-top: -20px;
+      background-image: linear-gradient(80deg,rgb(252,186,6), rgb(54,46,148) ,rgb(233,237,247));
+      -webkit-background-clip: text;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: transparent;
+      span{
+        color: white;
+      }
+    }
+  } 
 }
 
 .player{
   position: absolute;
-  top: 15%;
-  left: 17%;
+  top:5%;
+  left: 25%;
+  opacity: 0.4;
 }

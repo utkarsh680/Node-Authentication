@@ -268,7 +268,7 @@ link {
 .sign-up-placement .sign-up-box .right #gfg-icon #google img {
   height: 25px;
   width: 25px;
-  margin-left: 0;
+  margin-left: 15px;
 }
 
 .sign-up-placement .sign-up-box .right #gfg-icon #github {
@@ -426,8 +426,8 @@ link {
     justify-content: center;
     align-items: center;
   }
-  .sign-up-placement .sign-up-box .right #gfg-icon #google i {
-    margin-left: 0;
+  .sign-up-placement .sign-up-box .right #gfg-icon #google img {
+    margin-left: 0px;
   }
   .sign-up-placement .sign-up-box .right #gfg-icon #google p {
     display: none;

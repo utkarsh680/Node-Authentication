@@ -57,7 +57,7 @@ app.use(
     },
     store: MongoStore.create(
       {
-        mongoUrl: "mongodb://127.0.0.1/authentication",
+        mongoUrl: `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@cluster0.taxsifz.mongodb.net/?retryWrites=true&w=majority`,
         autoRemove: "disabled",
       },
       function (err) {

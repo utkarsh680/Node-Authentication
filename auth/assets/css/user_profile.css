@@ -19,6 +19,7 @@
   background-color: #191919;
   margin-top: -100px;
   transition: all 0.4s ease;
+  border: 2px solid #757575;
 }
 
 .success-box .box .success-sign {
@@ -27,7 +28,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: green;
+  background-color: #6fc96f;
   border-radius: 50%;
   position: absolute;
   top: -36px;
@@ -39,34 +40,26 @@
 }
 
 .success-box .box .success-auth {
-  color: green;
+  color: #6fc96f;
   margin-top: 40px;
   transition: all 0.4s ease;
 }
 
 .success-box .box .user-name {
   margin-top: 5px;
-  color: white;
+  color: #fdfdd1;
   list-style: none;
   font-size: 19px;
   font-family: sans-serif;
   transition: all 0.4s ease;
-  background-image: linear-gradient(80deg, #fcba06, #2e942e, #db1414);
-  -webkit-background-clip: text;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: transparent;
 }
 
 .success-box .box .user-email {
-  color: white;
+  color: #fdfdd1;
   list-style: none;
   font-size: 22px;
   font-family: sans-serif;
   transition: all 0.4s ease;
-  background-image: linear-gradient(80deg, #fcba06, #2e7794, #0dc00d);
-  -webkit-background-clip: text;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: transparent;
 }
 
 .success-box .box .reset-password {
