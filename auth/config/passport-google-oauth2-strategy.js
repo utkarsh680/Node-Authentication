@@ -10,8 +10,8 @@ passport.use(
     clientSecret: process.env.GOOGLE_AUTH_SECRET,
     callbackURL: "http://localhost:8000/users/oauth2callback",
   },
-  async function(profile, done){
-    //find the user
+  async function(accessToken, refreshToken, profile, done){
+    //find the userj
     const user = await User.findOne({email: profile.emails[0].value})
     if(user){
         //if found, set this user as req.user
